@@ -95,13 +95,13 @@ Access dashboard at: http://<EC2_PUBLIC_IP>
 
 🖥 Usage
 
-Clone the Repository
+## Clone the Repository
 
 git clone https://github.com/your-username/gitops-apps.git
 
 cd gitops-apps
 
-Configure Application in ArgoCD UI
+## Configure Application in ArgoCD UI
 
 Application Name: nginx-app
 
@@ -117,7 +117,7 @@ Namespace: default
 
 Sync Policy: Automatic
 
-Verify Deployment
+## Verify Deployment
 
 sudo kubectl get pods
 
