@@ -1,10 +1,12 @@
 # GitOps with ArgoCD on Kubernetes (AWS EC2)
 
+
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
 [![Build Status][ci-image]][ci-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 [![OpenSSF Scorecard Badge][ossf-scorecard-badge]][ossf-scorecard-visualizer]
+
 
 A complete implementation of a GitOps workflow using **ArgoCD** on **Kubernetes (k3s)** running on an **AWS EC2 Ubuntu instance**.
 
