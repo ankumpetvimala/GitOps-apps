@@ -85,12 +85,16 @@ sudo kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-
 
 sudo kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 
-# Get initial admin password
+# Get credentials
+
 echo "Username: admin"
+
 sudo kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
 Access dashboard at: http://<EC2_PUBLIC_IP>
 
 🖥 Usage
+
 Clone the Repository
 
 git clone https://github.com/your-username/gitops-apps.git
@@ -122,43 +126,50 @@ sudo kubectl get svc nginx-service
 Access Nginx at: http://<NGINX_SERVICE_IP>
 
 🔄 Testing GitOps
+
 Make a change to the deployment (e.g., update Nginx version):
 
 vim nginx-deployment/deployment.yaml
+
 Commit and push the change:
 
 git add .
+
 git commit -m "Update nginx version"
+
 git push origin main
+
 ArgoCD will automatically sync the update to your cluster!
 
 🐛 Troubleshooting
+
 ❌ ArgoCD Pods Not Starting
 
 sudo kubectl get pods -n argocd
+
 sudo kubectl describe pod <pod-name> -n argocd
+
 sudo kubectl logs <pod-name> -n argocd
 
 ❌ Cannot Access ArgoCD UI
 
 sudo kubectl get svc -n argocd
-Check if EXTERNAL-IP is assigned.
 
-🤝 Contributing
+## Check if EXTERNAL-IP is assigned.
+
 Contributions are welcome! Please follow these steps:
 
+Fork the repository
 
-# Fork the repository
-# Create your feature branch
-git checkout -b feature/my-feature
+Create your feature branch (git checkout -b feature/fooBar)
 
-# Commit your changes
-git commit -am "Add my feature"
+Commit your changes (git commit -am 'Add some fooBar')
 
-# Push to your branch
-git push origin feature/my-feature
+Push to the branch (git push origin feature/fooBar)
 
-# Create a Pull Request
+Create a new Pull Request
+
+
 
 
 
