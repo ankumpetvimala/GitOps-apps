@@ -36,6 +36,12 @@ This setup leverages:
 - GitHub for version-controlled manifests
 - **ArgoCD** for syncing Git changes to the cluster
 
+  graph TD
+    A[GitHub Repository] -->|Manifests| B(ArgoCD)
+    B -->|Applies| C[Kubernetes Cluster]
+    C -->|Status| B
+    B -->|Visualization| D[ArgoCD Dashboard]
+
 ---
 
 ## 🛠 Prerequisites
